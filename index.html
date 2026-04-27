@@ -196,13 +196,73 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .city-body-inner{grid-template-columns:1fr}
-  .city-hdr-inner{flex-direction:column;align-items:flex-start;gap:10px}
-  .city-num{display:none}
+  /* Global */
+  body{font-size:16px}
+
+  /* Nav */
+  .nav-inner{padding:0 12px}
+  .nav-logo{font-size:15px;padding:12px 12px 12px 0}
+  .nav-item{padding:12px 9px;font-size:9px;letter-spacing:1px}
+
+  /* Hero */
+  .hero-content{padding:24px 20px}
+  .hero-meta{gap:14px;flex-wrap:wrap;justify-content:center}
+  .hero-meta-val{font-size:26px}
+  .hero-meta-lbl{font-size:9px}
+  .hero-travelers{font-size:16px;margin-top:24px}
+  .hero-year{letter-spacing:5px}
+
+  /* Route */
+  .route-sec{padding:48px 20px}
   .route-conn{display:none}
-  .route-cities{gap:12px 0;flex-direction:column}
-  .hero-meta{gap:20px}
-  .btable{font-size:13px}
+  .route-cities{flex-direction:column;align-items:center;gap:14px}
+  .route-city{flex-direction:row;gap:12px;align-items:center}
+  .route-city-name{font-size:14px}
+
+  /* City header */
+  .city-hdr{height:auto;min-height:200px;padding-bottom:8px}
+  .city-hdr-content{padding:24px 20px}
+  .city-hdr-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .city-num{display:none}
+  .city-name{font-size:52px}
+  .city-badge{font-size:9px}
+
+  /* City body */
+  .city-body{padding:32px 20px}
+  .city-body-inner{grid-template-columns:1fr;gap:28px}
+
+  /* Timeline */
+  .tl-time{min-width:38px;font-size:12px}
+  .tl-desc{font-size:13px}
+  .tl-day-title{font-size:17px}
+
+  /* Sidebar cards */
+  .scard{padding:18px}
+  .accom-price{font-size:24px}
+
+  /* Budget */
+  .budget-sec{padding:56px 20px}
+  .sec-title{font-size:40px;margin-bottom:32px}
+  .bcard{padding:22px}
+  .bcard-amt{font-size:32px}
+  .btable{font-size:12px}
+  .btable th,.btable td{padding:10px 10px}
+  .city-cell{font-size:14px !important}
+
+  /* Transport */
+  .transport-sec{padding:56px 20px}
+  .tgrid{grid-template-columns:1fr;gap:12px}
+  .tsummary{flex-direction:column;gap:16px;padding:20px}
+
+  /* Resumen de pagos */
+  .resumen-grid{grid-template-columns:1fr !important}
+
+  /* Footer */
+  .footer{padding:48px 20px}
+  .footer-title{font-size:38px}
+
+  /* General padding reduction */
+  .budget-inner,.transport-inner,.route-inner{padding:0}
 }
 </style>
 </head>
@@ -1101,7 +1161,7 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
       <div class="sec-title">Resumen de <em>Pagos</em></div>
     </div>
 
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+    <div class="reveal resumen-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
 
       <!-- YAMI & FELI -->
       <div style="background:rgba(255,255,255,.05);border-radius:12px;overflow:hidden">
