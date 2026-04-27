@@ -46,6 +46,23 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
 .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--light);font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.8s forwards;z-index:2}
 .hero-scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--light),transparent);animation:scrollAnim 2s 2.5s infinite}
 
+/* COUNTDOWN */
+.countdown-sec{background:#111009;padding:28px 40px;border-bottom:1px solid rgba(255,255,255,.06)}
+.countdown-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.countdown-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-right:40px;flex-shrink:0}
+.countdown-units{display:flex;align-items:center;gap:0}
+.countdown-unit{text-align:center;padding:0 24px}
+.countdown-num{font-family:var(--font-d);font-size:52px;font-weight:300;color:var(--white);line-height:1;min-width:2ch;display:inline-block}
+.countdown-unit-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-top:2px}
+.countdown-sep{font-family:var(--font-d);font-size:32px;color:rgba(255,255,255,.1);padding:0 4px;align-self:center;margin-bottom:16px}
+@media(max-width:768px){
+  .countdown-sec{padding:20px 16px}
+  .countdown-lbl{margin-right:0;margin-bottom:12px;width:100%;text-align:center}
+  .countdown-inner{flex-direction:column;gap:8px}
+  .countdown-unit{padding:0 14px}
+  .countdown-num{font-size:38px}
+}
+
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:rgba(28,22,16,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;padding:0 32px;overflow-x:auto;scrollbar-width:none}
@@ -315,6 +332,34 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
     <div class="hero-travelers">Yami · Feli · Adri</div>
   </div>
   <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown-sec">
+  <div class="countdown-inner">
+    <div class="countdown-lbl">✈️ Faltan para el vuelo</div>
+    <div class="countdown-units">
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-months">—</div>
+        <div class="countdown-unit-lbl">meses</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-days">—</div>
+        <div class="countdown-unit-lbl">días</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-hours">—</div>
+        <div class="countdown-unit-lbl">horas</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-mins">—</div>
+        <div class="countdown-unit-lbl">minutos</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- NAV -->
@@ -1430,6 +1475,38 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
 </footer>
 
 <script>
+// COUNTDOWN
+function updateCountdown(){
+  const target = new Date('2026-08-15T18:20:00-03:00');
+  const now = new Date();
+  const diff = target - now;
+  if(diff <= 0){
+    document.getElementById('cd-months').textContent = '0';
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '0';
+    document.getElementById('cd-mins').textContent = '00';
+    return;
+  }
+  // Months remaining
+  let months = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth());
+  const afterMonths = new Date(now);
+  afterMonths.setMonth(afterMonths.getMonth() + months);
+  if(afterMonths > target) months--;
+  // Remaining after months
+  const base = new Date(now);
+  base.setMonth(base.getMonth() + months);
+  const rem = target - base;
+  const days  = Math.floor(rem / 86400000);
+  const hours = Math.floor((rem % 86400000) / 3600000);
+  const mins  = Math.floor((rem % 3600000) / 60000);
+  document.getElementById('cd-months').textContent = months;
+  document.getElementById('cd-days').textContent   = days;
+  document.getElementById('cd-hours').textContent  = hours;
+  document.getElementById('cd-mins').textContent   = String(mins).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
 // LOGIN
 const HASH = 'daf4318b31563a5773d29cbadd92da8ccdf9f449e27e1f1c5911f5eb20e2fe95';
 async function sha256(str){
