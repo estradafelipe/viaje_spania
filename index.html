@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>España 2026 — Guía de Viaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FAF3E8;
+  --parchment:#F0E4CC;
+  --terra:#BF4E30;
+  --terra-l:#D9694A;
+  --azure:#1A5E8F;
+  --sand:#C9973A;
+  --sand-l:#E8C87A;
+  --olive:#5B6B3C;
+  --dark:#28221C;
+  --mid:#7A6E64;
+  --light:#B5A898;
+  --white:#FFFEF9;
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-size:20px;line-height:1.6;overflow-x:hidden}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#1C1610}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#4A2010 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 0% 100%,#1A3A5C 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 100% 100%,#6B3A20 0%,transparent 60%),#1C1610}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 1px,transparent 28px),repeating-linear-gradient(-45deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 1px,transparent 28px)}
+.hero-content{position:relative;z-index:2;padding:40px}
+.hero-eyebrow{font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--sand-l);margin-bottom:24px;opacity:0;animation:fadeUp .8s .3s forwards}
+.hero-title{font-family:var(--font-d);font-size:clamp(72px,13vw,170px);font-weight:300;color:var(--white);line-height:.88;letter-spacing:-2px;margin-bottom:16px;opacity:0;animation:fadeUp .8s .5s forwards}
+.hero-title em{font-style:italic;color:var(--sand-l)}
+.hero-year{font-family:var(--font-d);font-size:clamp(18px,3.5vw,44px);font-weight:300;color:var(--light);letter-spacing:10px;margin-bottom:48px;opacity:0;animation:fadeUp .8s .7s forwards}
+.hero-div{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--sand-l),transparent);margin:0 auto 32px;opacity:0;animation:fadeUp .8s .9s forwards}
+.hero-meta{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s 1.1s forwards}
+.hero-meta-item{text-align:center}
+.hero-meta-val{font-family:var(--font-d);font-size:34px;font-weight:600;color:var(--white);line-height:1}
+.hero-meta-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-top:4px}
+.hero-travelers{margin-top:36px;font-family:var(--font-d);font-size:20px;font-style:italic;color:var(--sand-l);letter-spacing:2px;opacity:0;animation:fadeUp .8s 1.3s forwards}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--light);font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.8s forwards;z-index:2}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--light),transparent);animation:scrollAnim 2s 2.5s infinite}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(28,22,16,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;padding:0 32px;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-logo{font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--white);padding:14px 24px 14px 0;margin-right:8px;flex-shrink:0;border-right:1px solid rgba(255,255,255,.08)}
+.nav-item{padding:14px 16px;color:var(--light);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;transition:color .2s;position:relative}
+.nav-item:hover{color:var(--sand-l)}
+.nav-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%) scaleX(0);width:36px;height:2px;background:var(--terra);transition:transform .2s}
+.nav-item:hover::after{transform:translateX(-50%) scaleX(1)}
+
+/* ROUTE */
+.route-sec{padding:72px 40px;background:var(--dark);position:relative;overflow:hidden}
+.route-sec::before{content:'RUTA';position:absolute;font-family:var(--font-d);font-size:220px;font-weight:700;color:rgba(255,255,255,.018);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.route-inner{max-width:1280px;margin:0 auto}
+.route-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sand-l);margin-bottom:48px;text-align:center}
+.route-cities{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0}
+.route-city{display:flex;flex-direction:column;align-items:center;gap:6px}
+.route-dot{width:11px;height:11px;border-radius:50%;background:var(--terra);border:2px solid var(--sand-l);transition:transform .2s;cursor:default}
+.route-city:hover .route-dot{transform:scale(1.6)}
+.route-city-name{font-family:var(--font-d);font-size:15px;font-weight:600;color:var(--white);letter-spacing:1px}
+.route-city-dates{font-size:10px;color:var(--light);letter-spacing:.5px}
+.route-conn{display:flex;align-items:center;gap:4px;padding:0 8px;margin-top:-22px}
+.route-conn-line{width:28px;height:1px;background:rgba(255,255,255,.15)}
+.route-conn-icon{font-size:28px}
+
+/* CITY HEADER */
+.city-sec{position:relative}
+.city-hdr{position:relative;height:360px;display:flex;align-items:flex-end;overflow:hidden}
+.city-hdr-bg{position:absolute;inset:0}
+.city-hdr--madrid .city-hdr-bg{background:linear-gradient(135deg,#8B1A1A 0%,#5C1A1A 30%,#2A1400 70%,#C8860A 100%)}
+.city-hdr--malaga .city-hdr-bg{background:linear-gradient(135deg,#1A5E8F 0%,#0D3B5C 30%,#4A1800 70%,#E07050 100%)}
+.city-hdr--mallorca .city-hdr-bg{background:linear-gradient(135deg,#0A4A4A 0%,#135E5E 40%,#1A7A6A 70%,#2A9D8F 100%)}
+.city-hdr--ibiza .city-hdr-bg{background:linear-gradient(135deg,#3D0B55 0%,#6B1A7A 40%,#9B2C8A 70%,#C45A7A 100%)}
+.city-hdr--formentera .city-hdr-bg{background:linear-gradient(135deg,#003D6B 0%,#0077B6 40%,#00B4D8 70%,#90E0EF 100%)}
+.city-hdr--valencia .city-hdr-bg{background:linear-gradient(135deg,#C15218 0%,#D4691C 30%,#E87C30 70%,#F4A261 100%)}
+.city-hdr--barcelona .city-hdr-bg{background:linear-gradient(135deg,#7A0C0C 0%,#A01818 30%,#C81818 60%,#FFBE0B 100%)}
+.city-hdr-tiles{position:absolute;inset:0;opacity:.055;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px)}
+.city-hdr-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,transparent 60%)}
+.city-hdr-content{position:relative;z-index:2;padding:36px 40px;width:100%}
+.city-hdr-inner{max-width:1280px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between}
+.city-num{font-family:var(--font-d);font-size:130px;font-weight:300;color:rgba(255,255,255,.05);line-height:1;position:absolute;right:40px;bottom:24px;pointer-events:none}
+.city-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:10px}
+.city-name{font-family:var(--font-d);font-size:clamp(44px,7.5vw,90px);font-weight:300;color:var(--white);line-height:.9;letter-spacing:-1px}
+.city-name em{font-style:italic}
+.city-dates-badge{text-align:right}
+.city-date-range{font-family:var(--font-d);font-size:22px;font-weight:300;color:var(--white);letter-spacing:2px}
+.city-nights{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px}
+
+/* CITY BODY */
+.city-body{background:var(--white);padding:56px 40px}
+.city-body-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 300px;gap:56px}
+
+/* TIMELINE */
+.tl-day{margin-bottom:36px}
+.tl-day-hdr{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.tl-day-dot{width:9px;height:9px;border-radius:50%;background:var(--terra);flex-shrink:0}
+.tl-day-title{font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--dark)}
+.tl-day-line{flex:1;height:1px;background:var(--parchment)}
+.tl-events{margin-left:23px;border-left:1px solid var(--parchment);padding-left:22px}
+.tl-event{display:flex;gap:14px;margin-bottom:14px;position:relative}
+.tl-event::before{content:'';position:absolute;left:-27px;top:7px;width:5px;height:5px;border-radius:50%;background:var(--light)}
+.tl-time{font-family:var(--font-d);font-size:13px;font-weight:600;color:var(--terra);white-space:nowrap;min-width:46px;padding-top:1px}
+.tl-desc{font-size:14px;color:var(--dark);line-height:1.5}
+.tl-note{font-size:12px;color:var(--mid);font-style:italic;margin-top:3px}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:20px}
+.scard{background:var(--cream);border:1px solid var(--parchment);border-radius:10px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.scard-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.scard-title::before{content:'';width:18px;height:1px;background:var(--light)}
+.accom-name{font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--dark);margin-bottom:3px}
+.accom-addr{font-size:12px;color:var(--mid);margin-bottom:14px}
+.accom-row{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--parchment)}
+.accom-price{font-family:var(--font-d);font-size:28px;font-weight:600;color:var(--terra)}
+.accom-price-lbl{font-size:11px;color:var(--mid)}
+.badge{font-size:11px;padding:4px 11px;border-radius:20px;font-weight:500}
+.badge--paid{background:#E8F5E9;color:#2E7D32}
+.badge--partial{background:#FFF3E0;color:#E65100}
+.badge--pending{background:#FCE4EC;color:#C62828}
+.hl-list{display:flex;flex-direction:column;gap:7px}
+.hl-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--dark);line-height:1.4}
+.hl-item::before{content:'→';color:var(--terra);font-family:var(--font-d);flex-shrink:0}
+
+/* BUDGET */
+.budget-sec{background:var(--dark);padding:80px 40px}
+.budget-inner{max-width:1280px;margin:0 auto}
+.sec-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--sand-l);margin-bottom:12px}
+.sec-title{font-family:var(--font-d);font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);letter-spacing:-1px;line-height:1;margin-bottom:48px}
+.sec-title em{font-style:italic;color:var(--sand-l)}
+.budget-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;margin-bottom:40px}
+.bcard{background:rgba(255,255,255,.04);padding:30px;transition:background .2s}
+.bcard:hover{background:rgba(255,255,255,.07)}
+.bcard-icon{font-size:22px;margin-bottom:14px}
+.bcard-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:7px}
+.bcard-amt{font-family:var(--font-d);font-size:42px;font-weight:300;color:var(--white);line-height:1}
+.bcard-amt sup{font-size:18px;vertical-align:super}
+.bcard-sub{font-size:12px;color:var(--mid);margin-top:7px}
+.btable{width:100%;border-collapse:collapse}
+.btable th{text-align:left;padding:14px 18px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);font-weight:400;border-bottom:1px solid rgba(255,255,255,.08)}
+.btable th:not(:first-child){text-align:right}
+.btable td{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.04)}
+.btable td:not(:first-child){text-align:right}
+.btable .city-cell{font-family:var(--font-d);font-size:18px;color:var(--white)}
+.btable .total-row td{background:rgba(255,255,255,.04)}
+.btable .total-row .city-cell{font-weight:600;color:var(--sand-l);font-size:20px}
+.btable .total-row .amt-main{font-family:var(--font-d);font-size:22px;font-weight:600;color:var(--sand-l)}
+.amt-neutral{font-size:14px;color:var(--light)}
+.amt-paid{font-size:14px;color:#a5d6a7}
+.amt-pend{font-size:14px;color:#ef9a9a}
+.amt-warn{font-size:13px;color:#ffcc80}
+.pay-note{font-size:12px;color:var(--mid)}
+
+/* TRANSPORT */
+.transport-sec{background:var(--cream);padding:80px 40px}
+.transport-inner{max-width:1280px;margin:0 auto}
+.transport-sec .sec-eyebrow{color:var(--terra)}
+.transport-sec .sec-title{color:var(--dark)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:40px}
+.tcard{background:var(--white);border:1px solid var(--parchment);border-radius:10px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.09)}
+.troute{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.tcity{font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--dark)}
+.tarrow{flex:1;display:flex;align-items:center;gap:3px}
+.tarrow-line{flex:1;height:1px;background:var(--parchment)}
+.tarrow-head{color:var(--light);font-size:12px}
+.tprice{font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--terra)}
+.tprice sup{font-size:12px}
+.tmeta{display:flex;gap:12px;align-items:center}
+.ttype{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:4px 11px;border-radius:20px}
+.ttype--train{background:#E3F2FD;color:#1565C0}
+.ttype--flight{background:#E8EAF6;color:#283593}
+.ttype--ferry{background:#E0F7FA;color:#006064}
+.ttimes{font-size:12px;color:var(--mid)}
+.tpaid{margin-top:10px;font-size:11px;color:var(--mid);padding-top:10px;border-top:1px solid var(--parchment)}
+.tsummary{margin-top:40px;background:var(--parchment);border-radius:10px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+
+/* FOOTER */
+.footer{background:var(--dark);padding:56px 40px;text-align:center}
+.footer-title{font-family:var(--font-d);font-size:52px;font-style:italic;font-weight:300;color:var(--white);margin-bottom:16px}
+.footer-line{width:60px;height:1px;background:var(--sand-l);margin:20px auto}
+.footer-sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollAnim{0%,100%{opacity:1}50%{opacity:0}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .city-body-inner{grid-template-columns:1fr}
+  .city-hdr-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .city-num{display:none}
+  .route-conn{display:none}
+  .route-cities{gap:12px 0;flex-direction:column}
+  .hero-meta{gap:20px}
+  .btable{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Verano · Agosto 2026</div>
+    <h1 class="hero-title">Espa<em>ña</em></h1>
+    <div class="hero-year">2 · 0 · 2 · 6</div>
+    <div class="hero-div"></div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="hero-meta-val">7</div><div class="hero-meta-lbl">Destinos</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-val">16</div><div class="hero-meta-lbl">Noches</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-val">3</div><div class="hero-meta-lbl">Viajeros</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-val">$3.7K</div><div class="hero-meta-lbl">Presupuesto</div></div>
+    </div>
+    <div class="hero-travelers">Yami · Feli · Adri</div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">España '26</div>
+    <a href="#madrid" class="nav-item">Madrid</a>
+    <a href="#malaga" class="nav-item">Málaga</a>
+    <a href="#mallorca" class="nav-item">Mallorca</a>
+    <a href="#ibiza" class="nav-item">Ibiza</a>
+    <a href="#formentera" class="nav-item">Formentera</a>
+    <a href="#valencia" class="nav-item">Valencia</a>
+    <a href="#barcelona" class="nav-item">Barcelona</a>
+    <a href="#presupuesto" class="nav-item">Presupuesto</a>
+    <a href="#traslados" class="nav-item">Traslados</a>
+  </div>
+</nav>
+
+<!-- ROUTE -->
+<section class="route-sec">
+  <div class="route-inner">
+    <div class="route-label">Ruta del Viaje · 16 AGO — 01 SEP</div>
+    <div class="route-cities">
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Madrid</div><div class="route-city-dates">16–18 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">🚂</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Málaga</div><div class="route-city-dates">18–21 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">✈️</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Mallorca</div><div class="route-city-dates">21–24 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">⛴️</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Ibiza</div><div class="route-city-dates">24–26 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">⛴️</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot" style="background:var(--azure);border-color:#90E0EF"></div><div class="route-city-name">Formentera</div><div class="route-city-dates">26 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">✈️</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Valencia</div><div class="route-city-dates">26–28 Ago</div></div>
+      <div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">🚂</div><div class="route-conn-line"></div></div>
+      <div class="route-city"><div class="route-dot"></div><div class="route-city-name">Barcelona</div><div class="route-city-dates">28–31 Ago</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MADRID ═══ -->
+<section class="city-sec" id="madrid">
+  <div class="city-hdr city-hdr--madrid">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">01 · Capital de España</div><h2 class="city-name">Ma<em>drid</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">16 — 18 AGO</div><div class="city-nights">2 noches</div></div>
+      </div>
+      <div class="city-num">01</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Domingo 16 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">14:05</div><div><div class="tl-desc">Llegada al Aeropuerto de Barajas</div></div></div>
+            <div class="tl-event"><div class="tl-time">14:30</div><div><div class="tl-desc">Traslado en Subte — líneas 8 + 9 + 2</div><div class="tl-note">Comprar bono de 10 viajes. Ticket + tarjeta + impuesto aeropuerto.</div></div></div>
+            <div class="tl-event"><div class="tl-time">16:00</div><div><div class="tl-desc">Check In — Airbnb, Calle del Amparo 8</div></div></div>
+            <div class="tl-event"><div class="tl-time">18:30</div><div><div class="tl-desc">Free Tour Madrid con Civitatis</div><div class="tl-note">Reserva A38483712 · Calle Montera 32 · €10 por persona</div></div></div>
+            <div class="tl-event"><div class="tl-time">22:00</div><div><div class="tl-desc">Churros en Chocolatería San Ginés</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Lunes 17 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">10:00</div><div><div class="tl-desc">Gran Vía</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:00</div><div><div class="tl-desc">Plaza de Cibeles</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:30</div><div><div class="tl-desc">Parque del Retiro</div></div></div>
+            <div class="tl-event"><div class="tl-time">14:30</div><div><div class="tl-desc">El Corte Inglés + compras Gran Vía</div></div></div>
+            <div class="tl-event"><div class="tl-time">19:00</div><div><div class="tl-desc">Barrios de Chueca & Malasaña</div><div class="tl-note">Comprar comida para el tren del día siguiente</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Airbnb · Madrid</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Calle+del+Amparo+8,+Madrid" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Calle del Amparo 8, Madrid ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Anfitrión</span>
+              <span style="color:var(--dark);font-weight:500">Carlos</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Dom 16 Ago · desde 14:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Mar 18 Ago · hasta 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">HMES4PEQMY</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>315</div><div class="accom-price-lbl">total · 2 noches</div></div>
+            <span class="badge badge--partial">Parcial</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Para comer</div>
+          <div class="hl-list">
+            <div class="hl-item">Bocadillo Oink</div>
+            <div class="hl-item">La Campana — bocadillo de calamares</div>
+            <div class="hl-item">100 Montaditos</div>
+            <div class="hl-item">Churros en San Ginés</div>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Free Tour Civitatis (reserva incluida)</div>
+            <div class="hl-item">Parque del Retiro</div>
+            <div class="hl-item">Gran Vía</div>
+            <div class="hl-item">Chueca & Malasaña</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MÁLAGA ═══ -->
+<section class="city-sec" id="malaga">
+  <div class="city-hdr city-hdr--malaga">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">02 · Costa del Sol</div><h2 class="city-name">Má<em>laga</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">18 — 21 AGO</div><div class="city-nights">3 noches</div></div>
+      </div>
+      <div class="city-num">02</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Martes 18 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Esperando el tren — sale 08:40 AM hacia Málaga</div></div></div>
+            <div class="tl-event"><div class="tl-time">11:14</div><div><div class="tl-desc">Llegada a Málaga</div><div class="tl-note">Traslado al alojamiento en bus, Línea N1</div></div></div>
+            <div class="tl-event"><div class="tl-time">15:00</div><div><div class="tl-desc">Check In — Airbnb, Calle Almería 27</div></div></div>
+            <div class="tl-event"><div class="tl-time">15:30</div><div><div class="tl-desc">Playa de Pedregalejo</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Miércoles 19 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">09:00</div><div><div class="tl-desc">Playa La Malagueta</div></div></div>
+            <div class="tl-event"><div class="tl-time">17:00</div><div><div class="tl-desc">Centro Histórico de Málaga</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Jueves 20 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Excursión en bus — Nerja y Frigiliana</div><div class="tl-note">Día completo</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Airbnb · Málaga</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Calle+Almería+27,+Málaga" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Calle Almería 27, Málaga ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Anfitrión</span>
+              <span style="color:var(--dark);font-weight:500">Ana</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Mar 18 Ago · desde 15:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Vie 21 Ago · hasta 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">HMC4YHEZJ8</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>458</div><div class="accom-price-lbl">total · 3 noches</div></div>
+            <span class="badge badge--partial">Parcial</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Playa de Pedregalejo</div>
+            <div class="hl-item">Playa La Malagueta</div>
+            <div class="hl-item">Centro Histórico</div>
+            <div class="hl-item">Nerja & Frigiliana — excursión día completo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MALLORCA ═══ -->
+<section class="city-sec" id="mallorca">
+  <div class="city-hdr city-hdr--mallorca">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">03 · Islas Baleares</div><h2 class="city-name">Ma<em>llorca</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">21 — 24 AGO</div><div class="city-nights">3 noches</div></div>
+      </div>
+      <div class="city-num">03</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Viernes 21 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">06:00</div><div><div class="tl-desc">Camino al aeropuerto de Málaga — vuelo sale 08:40</div></div></div>
+            <div class="tl-event"><div class="tl-time">10:10</div><div><div class="tl-desc">Llegada a Palma de Mallorca — retiro del auto</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:00</div><div><div class="tl-desc">Almuerzo o compras para comer en Valldemossa</div></div></div>
+            <div class="tl-event"><div class="tl-time">13:30</div><div><div class="tl-desc">Cala Deia</div></div></div>
+            <div class="tl-event"><div class="tl-time">17:00</div><div><div class="tl-desc">Sa Calobra + Torrente de Pareis</div></div></div>
+            <div class="tl-event"><div class="tl-time">21:00</div><div><div class="tl-desc">Check In — Carrer Marina 41</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Sábado 22 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Cala de Moro + Cala s'Almunia</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:00</div><div><div class="tl-desc">Cala Llombards</div></div></div>
+            <div class="tl-event"><div class="tl-time">15:00</div><div><div class="tl-desc">Cala d'Or</div></div></div>
+            <div class="tl-event"><div class="tl-time">18:00</div><div><div class="tl-desc">Palma — caminar por el centro y cenar</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Domingo 23 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Cala Formentor + Mirador Es Colomer</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:00</div><div><div class="tl-desc">Playa de Muro</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Airbnb · Sa Pobla</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Carrer+Marina+41,+Sa+Pobla,+Mallorca" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Carrer Marina 41, Sa Pobla ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Anfitrión</span>
+              <span style="color:var(--dark);font-weight:500">Marga</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Vie 21 Ago · desde 16:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Lun 24 Ago · hasta 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">HM3H3CT8W9</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>485</div><div class="accom-price-lbl">total · 3 noches</div></div>
+            <span class="badge badge--partial">Parcial</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Auto de alquiler 🚗</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+            <div style="font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--dark)">Avis — Renault Clio</div>
+            <div style="font-size:11px;color:var(--mid)">o similar</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Retiro</span>
+              <span style="color:var(--dark);font-weight:500">Vie 21 Ago · 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Devolución</span>
+              <span style="color:var(--dark);font-weight:500">Lun 24 Ago · 08:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Lugar</span>
+              <span style="color:var(--dark);font-weight:500">Aeropuerto Son Sant Joan</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">467676333300</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Nº alquiler</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">02823652AR6</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:11px;background:#E8F5E9;color:#2E7D32;padding:3px 10px;border-radius:20px">Km ilimitado</span>
+            <span style="font-size:11px;background:#E3F2FD;color:#1565C0;padding:3px 10px;border-radius:20px">Manual</span>
+            <span style="font-size:11px;background:#F3E5F5;color:#6A1B9A;padding:3px 10px;border-radius:20px">Seguro incluido</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Valldemossa — pueblo pintoresco</div>
+            <div class="hl-item">Cala Deia</div>
+            <div class="hl-item">Sa Calobra + Torrente de Pareis</div>
+            <div class="hl-item">Cala de Moro & Cala s'Almunia</div>
+            <div class="hl-item">Cala Formentor + Mirador Es Colomer</div>
+            <div class="hl-item">Playa de Muro</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IBIZA ═══ -->
+<section class="city-sec" id="ibiza">
+  <div class="city-hdr city-hdr--ibiza">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">04 · Islas Baleares</div><h2 class="city-name">I<em>biza</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">24 — 26 AGO</div><div class="city-nights">2 noches</div></div>
+      </div>
+      <div class="city-num">04</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Lunes 24 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">06:00</div><div><div class="tl-desc">Dejar el auto y camino al muelle</div><div class="tl-note">Ferry sale 10:00 hs desde Mallorca</div></div></div>
+            <div class="tl-event"><div class="tl-time">13:45</div><div><div class="tl-desc">Llegada a Ibiza — retiro del auto</div></div></div>
+            <div class="tl-event"><div class="tl-time">15:00</div><div><div class="tl-desc">Check In — Hotel Los Felices Ibiza</div></div></div>
+            <div class="tl-event"><div class="tl-time">16:00</div><div><div class="tl-desc">Centro de Ibiza + piscina del hotel</div><div class="tl-note">Opción: Cala Bassa a 10 minutos</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Martes 25 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Cala Saladeta</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:00</div><div><div class="tl-desc">Cala Comte</div><div class="tl-note">Ver si queremos ir también a Cala d'Hort</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Hotel Los Felices ★★★★</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Carrer+Madrid+25,+San+Jose+de+la+Atalaya,+Ibiza" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Carrer Madrid 25, San José de la Atalaya ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Habitación</span>
+              <span style="color:var(--dark);font-weight:500">Suite Junior · Desayuno buffet</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Lun 24 Ago · desde 15:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Mié 26 Ago · hasta 12:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva Despegar</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">641876331100</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Teléfono</span>
+              <span style="color:var(--dark);font-weight:500">+34 871 620 930</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>750</div><div class="accom-price-lbl">total · 2 noches · pagar allá</div></div>
+            <span class="badge badge--pending">En destino</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Auto de alquiler 🚗</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+            <div style="font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--dark)">Fiat Panda</div>
+            <div style="font-size:11px;color:var(--mid)">Topo Moto Rent</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Recogida</span>
+              <span style="color:var(--dark);font-weight:500">Lun 24 Ago · 14:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Devolución</span>
+              <span style="color:var(--dark);font-weight:500">Mié 26 Ago · 06:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Lugar</span>
+              <span style="color:var(--dark);font-weight:500">Aeropuerto Ibiza</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Contrato</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">C-004951</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Teléfono</span>
+              <span style="color:var(--dark);font-weight:500">+34 615 596 725</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Total</span>
+              <span style="color:var(--terra);font-family:var(--font-d);font-size:16px;font-weight:600">€110</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:11px;background:#E8F5E9;color:#2E7D32;padding:3px 10px;border-radius:20px">Franquicia €0</span>
+            <span style="font-size:11px;background:#FCE4EC;color:#C62828;padding:3px 10px;border-radius:20px">⚠️ No sacar de la isla</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Cala Saladeta</div>
+            <div class="hl-item">Cala Comte</div>
+            <div class="hl-item">Cala Bassa</div>
+            <div class="hl-item">Centro histórico</div>
+            <div class="hl-item">Excursión a Formentera al día siguiente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMENTERA ═══ -->
+<section class="city-sec" id="formentera">
+  <div class="city-hdr city-hdr--formentera">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">05 · Excursión desde Ibiza</div><h2 class="city-name">For<em>mentera</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">26 AGO</div><div class="city-nights">Día completo</div></div>
+      </div>
+      <div class="city-num">05</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Miércoles 26 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">07:00</div><div><div class="tl-desc">Salida de Ibiza en ferry</div></div></div>
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Llegada a Formentera</div></div></div>
+            <div class="tl-event"><div class="tl-time">Todo el día</div><div><div class="tl-desc">Cala Saona & Ses Illetes</div><div class="tl-note">Aguas turquesas — una de las mejores playas de Europa</div></div></div>
+            <div class="tl-event"><div class="tl-time">18:00</div><div><div class="tl-desc">Ferry de vuelta a Ibiza</div></div></div>
+            <div class="tl-event"><div class="tl-time">18:30</div><div><div class="tl-desc">Llegada a Ibiza</div></div></div>
+            <div class="tl-event"><div class="tl-time">22:20</div><div><div class="tl-desc">Vuelo a Valencia</div><div class="tl-note">Llega 23:35 — Check in Airbnb Calle Mariola 9</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Ferries del día</div>
+          <div class="hl-list">
+            <div class="hl-item">Ibiza → Formentera: $91 (07:02)</div>
+            <div class="hl-item">Formentera → Ibiza: $108 (18:01)</div>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Ses Illetes — aguas cristalinas</div>
+            <div class="hl-item">Cala Saona</div>
+            <div class="hl-item">La isla más virgen de Baleares</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VALENCIA ═══ -->
+<section class="city-sec" id="valencia">
+  <div class="city-hdr city-hdr--valencia">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">06 · Comunidad Valenciana</div><h2 class="city-name">Va<em>lencia</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">26 — 28 AGO</div><div class="city-nights">2 noches</div></div>
+      </div>
+      <div class="city-num">06</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Jueves 27 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">10:30</div><div><div class="tl-desc">Free Tour Valencia con Civitatis</div><div class="tl-note">Reserva A38516591 · Plaza de la Virgen, junto a la Basílica · Guías con camisetas y paraguas naranjas</div></div></div>
+            <div class="tl-event"><div class="tl-time">12:30</div><div><div class="tl-desc">Almuerzo</div></div></div>
+            <div class="tl-event"><div class="tl-time">Tarde</div><div><div class="tl-desc">Ayuntamiento · Ciudad de las Artes y las Ciencias · Marina de Valencia · Plaza de Toros</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Airbnb · Valencia</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Calle+Mariola+9,+Valencia" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Calle Mariola 9, Valencia ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Anfitrión</span>
+              <span style="color:var(--dark);font-weight:500">Jaime</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Mié 26 Ago · desde 14:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Vie 28 Ago · hasta 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">HMT8XZ2W5K</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>274</div><div class="accom-price-lbl">total · 2 noches</div></div>
+            <span class="badge badge--partial">Parcial</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Free Tour Civitatis (reserva incluida)</div>
+            <div class="hl-item">Ciudad de las Artes y las Ciencias</div>
+            <div class="hl-item">Marina de Valencia</div>
+            <div class="hl-item">Plaza de Toros</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BARCELONA ═══ -->
+<section class="city-sec" id="barcelona">
+  <div class="city-hdr city-hdr--barcelona">
+    <div class="city-hdr-bg"></div><div class="city-hdr-tiles"></div><div class="city-hdr-overlay"></div>
+    <div class="city-hdr-content">
+      <div class="city-hdr-inner">
+        <div><div class="city-badge">07 · Cataluña</div><h2 class="city-name">Bar<em>celona</em></h2></div>
+        <div class="city-dates-badge"><div class="city-date-range">28 — 31 AGO</div><div class="city-nights">3 noches</div></div>
+      </div>
+      <div class="city-num">07</div>
+    </div>
+  </div>
+  <div class="city-body">
+    <div class="city-body-inner">
+      <div class="reveal">
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Viernes 28 de Agosto — Llegada</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">06:30</div><div><div class="tl-desc">Tren desde Valencia</div></div></div>
+            <div class="tl-event"><div class="tl-time">09:30</div><div><div class="tl-desc">Llegada a Barcelona</div></div></div>
+            <div class="tl-event"><div class="tl-time">14:00</div><div><div class="tl-desc">Check In — Airbnb, Carrer d'en Fontrodona 15</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Sábado 29 & Domingo 30 de Agosto</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">—</div><div><div class="tl-desc">Barrio Gótico + Catedral de Barcelona + Puente del Bisbe</div></div></div>
+            <div class="tl-event"><div class="tl-time">—</div><div><div class="tl-desc">La Rambla + Playa La Barceloneta</div></div></div>
+            <div class="tl-event"><div class="tl-time">—</div><div><div class="tl-desc">Mercado de La Boqueria</div></div></div>
+            <div class="tl-event"><div class="tl-time">—</div><div><div class="tl-desc">Park Güell — Entrada €18</div><div class="tl-note">Entradas ya se pueden comprar online</div></div></div>
+            <div class="tl-event"><div class="tl-time">—</div><div><div class="tl-desc">Paseo de Gracia — Casa Batlló €29 · La Pedrera €29</div><div class="tl-note">Entradas ya se pueden comprar online</div></div></div>
+          </div>
+        </div>
+        <div class="tl-day">
+          <div class="tl-day-hdr"><div class="tl-day-dot"></div><div class="tl-day-title">Lunes 31 de Agosto — Regreso a Madrid</div><div class="tl-day-line"></div></div>
+          <div class="tl-events">
+            <div class="tl-event"><div class="tl-time">08:00</div><div><div class="tl-desc">Tren Barcelona → Madrid</div></div></div>
+            <div class="tl-event"><div class="tl-time">11:20</div><div><div class="tl-desc">Llegada a Madrid</div></div></div>
+            <div class="tl-event"><div class="tl-time">19:00</div><div><div class="tl-desc">Salida al aeropuerto — vuelo de vuelta sale 23:45</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="scard reveal">
+          <div class="scard-title">Alojamiento</div>
+          <div class="accom-name">Airbnb · Barcelona</div>
+          <div class="accom-addr"><a href="https://maps.google.com/?q=Carrer+d'en+Fontrodona+15,+Barcelona" target="_blank" style="color:var(--terra);text-decoration:none;border-bottom:1px dashed var(--terra)">Carrer d'en Fontrodona 15, Barcelona ↗</a></div>
+          <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Anfitrión</span>
+              <span style="color:var(--dark);font-weight:500">Anna</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-in</span>
+              <span style="color:var(--dark);font-weight:500">Vie 28 Ago · desde 14:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Check-out</span>
+              <span style="color:var(--dark);font-weight:500">Lun 31 Ago · hasta 11:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--mid)">Reserva</span>
+              <span style="color:var(--dark);font-family:monospace;font-size:11px;letter-spacing:1px">HM2HYZEMX3</span>
+            </div>
+          </div>
+          <div class="accom-row">
+            <div><div class="accom-price"><sup>$</sup>526</div><div class="accom-price-lbl">total · 3 noches</div></div>
+            <span class="badge badge--partial">Parcial</span>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Entradas a comprar</div>
+          <div class="hl-list">
+            <div class="hl-item">Park Güell — €18 por persona</div>
+            <div class="hl-item">Casa Batlló — €29 por persona</div>
+            <div class="hl-item">La Pedrera — €29 por persona</div>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="scard-title">Highlights</div>
+          <div class="hl-list">
+            <div class="hl-item">Barrio Gótico + Catedral</div>
+            <div class="hl-item">La Rambla + Barceloneta</div>
+            <div class="hl-item">Mercado de La Boqueria</div>
+            <div class="hl-item">Park Güell (Gaudí)</div>
+            <div class="hl-item">Casa Batlló + La Pedrera</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRESUPUESTO ═══ -->
+<section class="budget-sec" id="presupuesto">
+  <div class="budget-inner">
+    <div class="reveal">
+      <div class="sec-eyebrow">Finanzas del viaje</div>
+      <div class="sec-title">Presu<em>puesto</em></div>
+    </div>
+    <div class="budget-cards reveal">
+      <div class="bcard">
+        <div class="bcard-icon">🏠</div>
+        <div class="bcard-lbl">Hospedaje · Total</div>
+        <div class="bcard-amt"><sup>$</sup>2.808</div>
+        <div class="bcard-sub">$936 por persona</div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-icon">🚂</div>
+        <div class="bcard-lbl">Traslados · Total</div>
+        <div class="bcard-amt"><sup>$</sup>940</div>
+        <div class="bcard-sub">$313 por persona</div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-icon">🚗</div>
+        <div class="bcard-lbl">Autos · 2 alquileres</div>
+        <div style="margin-top:8px">
+          <div style="font-family:var(--font-d);font-size:16px;color:#a5d6a7;line-height:1.6">$28 <span style="font-size:11px;color:var(--mid)">Mallorca · Yami+Feli ✓</span></div>
+          <div style="font-family:var(--font-d);font-size:16px;color:#ffcc80;line-height:1.6">$129 <span style="font-size:11px;color:var(--mid)">Ibiza · Adri · en destino</span></div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-icon">💰</div>
+        <div class="bcard-lbl">Total del viaje</div>
+        <div class="bcard-amt"><sup>$</sup>3.748</div>
+        <div class="bcard-sub">$1.249 por persona</div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-icon">✅</div>
+        <div class="bcard-lbl">Hospedaje pagado</div>
+        <div class="bcard-amt"><sup>$</sup>784</div>
+        <div class="bcard-sub" style="color:#ef9a9a">$2.024 pendiente</div>
+      </div>
+    </div>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="btable">
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Alojamiento</th>
+            <th>Pagado</th>
+            <th>Pendiente</th>
+            <th style="text-align:left">Quién pagó / cuándo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="city-cell">Madrid</td>
+            <td class="amt-neutral">$315</td>
+            <td class="amt-paid">$178</td>
+            <td class="amt-pend">$137</td>
+            <td class="pay-note">Adri · Bco. Provincia (01.08)</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Málaga</td>
+            <td class="amt-neutral">$458</td>
+            <td class="amt-paid">$91</td>
+            <td class="amt-pend">$367</td>
+            <td class="pay-note">Yami · BBVA (05.08)</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Mallorca</td>
+            <td class="amt-neutral">$485</td>
+            <td class="amt-paid">$97</td>
+            <td class="amt-pend">$388</td>
+            <td class="pay-note">Yami · BBVA (05.08)</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Ibiza</td>
+            <td class="amt-neutral">$750</td>
+            <td class="amt-warn">—</td>
+            <td class="amt-warn">$750 <span style="font-size:11px;opacity:.7">(en destino)</span></td>
+            <td class="pay-note">Hotel Los Felices · pagar al llegar</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Valencia</td>
+            <td class="amt-neutral">$274</td>
+            <td class="amt-paid">$155</td>
+            <td class="amt-pend">$119</td>
+            <td class="pay-note">Yami · ICBC (11.08)</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Barcelona</td>
+            <td class="amt-neutral">$526</td>
+            <td class="amt-paid">$263</td>
+            <td class="amt-pend">$263</td>
+            <td class="pay-note">Yami · ICBC (11.08)</td>
+          </tr>
+          <tr class="total-row">
+            <td class="city-cell">TOTAL</td>
+            <td class="amt-main">$2.808</td>
+            <td style="font-family:var(--font-d);font-size:18px;color:#a5d6a7;text-align:right">$784</td>
+            <td style="font-family:var(--font-d);font-size:18px;color:#ef9a9a;text-align:right">$2.024</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reveal" style="margin-top:40px;overflow-x:auto">
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sand-l);margin-bottom:16px">Autos alquilados</div>
+      <table class="btable">
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Empresa</th>
+            <th>Vehículo</th>
+            <th>Días</th>
+            <th style="text-align:right">Total</th>
+            <th style="text-align:right">Estado</th>
+            <th style="text-align:left">Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="city-cell">Mallorca</td>
+            <td class="pay-note">Avis</td>
+            <td class="pay-note">Renault Clio o similar</td>
+            <td class="pay-note">3 días</td>
+            <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:#a5d6a7">ARS $42.255</td>
+            <td style="text-align:right"><span class="badge badge--paid">Pagado</span></td>
+            <td class="pay-note">Visa ICBC *9293</td>
+          </tr>
+          <tr>
+            <td class="city-cell">Ibiza</td>
+            <td class="pay-note">Topo Moto Rent</td>
+            <td class="pay-note">Fiat Panda</td>
+            <td class="pay-note">2 días</td>
+            <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:#ffcc80">€110 <span style="font-size:11px;opacity:.7">(en destino)</span></td>
+            <td style="text-align:right"><span class="badge badge--pending">En destino</span></td>
+            <td class="pay-note">Pagar al retirar el auto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRASLADOS ═══ -->
+<section class="transport-sec" id="traslados">
+  <div class="transport-inner">
+    <div class="reveal">
+      <div class="sec-eyebrow">Entre ciudades</div>
+      <div class="sec-title">Tras<em>lados</em></div>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Madrid</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Málaga</div><div class="tprice"><sup>$</sup>88</div></div>
+        <div class="tmeta"><div class="ttype ttype--train">🚂 Tren</div><div class="ttimes">08:40 → 11:14</div></div>
+        <div class="tpaid">Pagado por Yami — Tarj. BBVA</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Málaga</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Mallorca</div><div class="tprice"><sup>$</sup>180</div></div>
+        <div class="tmeta"><div class="ttype ttype--flight">✈️ Avión</div><div class="ttimes">08:40 → 10:10</div></div>
+        <div class="tpaid">Pagado por Adri — Bco. Provincia</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Mallorca</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Ibiza</div><div class="tprice"><sup>$</sup>82</div></div>
+        <div class="tmeta"><div class="ttype ttype--ferry">⛴️ Ferry</div><div class="ttimes">10:01 → 13:45</div></div>
+        <div class="tpaid">Pagado por Adri — Bco. Provincia</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Ibiza</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Formentera</div><div class="tprice"><sup>$</sup>91</div></div>
+        <div class="tmeta"><div class="ttype ttype--ferry">⛴️ Ferry</div><div class="ttimes">07:02 → 08:00</div></div>
+        <div class="tpaid">Pagado por Adri — Bco. Provincia</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Formentera</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Ibiza</div><div class="tprice"><sup>$</sup>108</div></div>
+        <div class="tmeta"><div class="ttype ttype--ferry">⛴️ Ferry</div><div class="ttimes">18:01 → 18:30</div></div>
+        <div class="tpaid">Pagado por Adri — Bco. Provincia</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Ibiza</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Valencia</div><div class="tprice"><sup>$</sup>147</div></div>
+        <div class="tmeta"><div class="ttype ttype--flight">✈️ Avión</div><div class="ttimes">22:20 → 23:35</div></div>
+        <div class="tpaid">Pagado por Adri — Bco. Provincia</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Valencia</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Barcelona</div><div class="tprice"><sup>$</sup>142</div></div>
+        <div class="tmeta"><div class="ttype ttype--train">🚂 Tren</div><div class="ttimes">06:30 → 09:39</div></div>
+        <div class="tpaid">Pagado por Yami — Tarj. ICBC</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="troute"><div class="tcity">Barcelona</div><div class="tarrow"><div class="tarrow-line"></div><div class="tarrow-head">→</div></div><div class="tcity">Madrid</div><div class="tprice"><sup>$</sup>102</div></div>
+        <div class="tmeta"><div class="ttype ttype--train">🚂 Tren</div><div class="ttimes">08:00 → 11:20</div></div>
+        <div class="tpaid">Pagado por Yami — Tarj. ICBC</div>
+      </div>
+    </div>
+    <div class="tsummary reveal">
+      <div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Total traslados</div>
+        <div style="font-family:var(--font-d);font-size:50px;font-weight:300;color:var(--dark);line-height:1"><sup style="font-size:20px">$</sup>940</div>
+      </div>
+      <div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Por persona</div>
+        <div style="font-family:var(--font-d);font-size:38px;font-weight:300;color:var(--terra);line-height:1"><sup style="font-size:16px">$</sup>313</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:4px">Transportes</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="font-size:13px;color:var(--dark);display:flex;align-items:center;gap:5px">🚂 3 Trenes</div>
+          <div style="font-size:13px;color:var(--dark);display:flex;align-items:center;gap:5px">✈️ 2 Vuelos</div>
+          <div style="font-size:13px;color:var(--dark);display:flex;align-items:center;gap:5px">⛴️ 3 Ferries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESUMEN DE PAGOS ═══ -->
+<section style="background:var(--dark);padding:80px 40px">
+  <div style="max-width:1280px;margin:0 auto">
+
+    <div class="reveal">
+      <div class="sec-eyebrow">Quién debe qué</div>
+      <div class="sec-title">Resumen de <em>Pagos</em></div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+
+      <!-- YAMI & FELI -->
+      <div style="background:rgba(255,255,255,.05);border-radius:12px;overflow:hidden">
+        <div style="background:rgba(191,78,48,.2);padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sand-l);margin-bottom:8px">Grupo · 2 personas</div>
+          <div style="font-family:var(--font-d);font-size:36px;font-weight:300;color:var(--white)">Yami & <em>Feli</em></div>
+        </div>
+        <div style="padding:28px">
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Hospedaje</div>
+            <div style="display:grid;grid-template-columns:1fr auto auto;gap:7px 14px;align-items:center">
+              <span style="font-size:12px;color:var(--light)">Málaga</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#a5d6a7;text-align:right">$91 ✓</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ef9a9a;text-align:right">$367 pend.</span>
+              <span style="font-size:12px;color:var(--light)">Mallorca</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#a5d6a7;text-align:right">$97 ✓</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ef9a9a;text-align:right">$388 pend.</span>
+              <span style="font-size:12px;color:var(--light)">Valencia</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#a5d6a7;text-align:right">$155 ✓</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ef9a9a;text-align:right">$119 pend.</span>
+              <span style="font-size:12px;color:var(--light)">Barcelona</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#a5d6a7;text-align:right">$263 ✓</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ef9a9a;text-align:right">$263 pend.</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Traslados</div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13px;color:var(--light)">Madrid → Málaga</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$88 ✓</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13px;color:var(--light)">Valencia → Barcelona</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$142 ✓</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="font-size:13px;color:var(--light)">Barcelona → Madrid</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$102 ✓</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Autos</div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="font-size:13px;color:var(--light)">Mallorca · Avis</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$28 ✓</span>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:20px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Hospedaje pagado</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#a5d6a7">$606</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Traslados pagados</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#a5d6a7">$332</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Auto Mallorca pagado</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#a5d6a7">$28</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sand-l)">Falta pagar</span>
+              <div style="text-align:right">
+                <div style="font-family:var(--font-d);font-size:32px;font-weight:600;color:#ef9a9a;line-height:1">$1.137</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ADRI -->
+      <div style="background:rgba(255,255,255,.05);border-radius:12px;overflow:hidden">
+        <div style="background:rgba(26,94,143,.2);padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sand-l);margin-bottom:8px">Grupo · 1 persona</div>
+          <div style="font-family:var(--font-d);font-size:36px;font-weight:300;color:var(--white)"><em>Adri</em></div>
+        </div>
+        <div style="padding:28px">
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Hospedaje</div>
+            <div style="display:grid;grid-template-columns:1fr auto auto;gap:7px 14px;align-items:center">
+              <span style="font-size:12px;color:var(--light)">Madrid</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#a5d6a7;text-align:right">$178 ✓</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ef9a9a;text-align:right">$137 pend.</span>
+              <span style="font-size:12px;color:var(--light)">Ibiza</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:var(--mid);text-align:right">—</span>
+              <span style="font-family:var(--font-d);font-size:14px;color:#ffcc80;text-align:right">$750 destino</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Traslados</div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13px;color:var(--light)">Málaga → Mallorca</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$180 ✓</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13px;color:var(--light)">Mallorca → Ibiza</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$82 ✓</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13px;color:var(--light)">Ibiza ↔ Formentera</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$199 ✓</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="font-size:13px;color:var(--light)">Ibiza → Valencia</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#a5d6a7">$147 ✓</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Autos</div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="font-size:13px;color:var(--light)">Ibiza · Fiat Panda</span>
+              <span style="font-family:var(--font-d);font-size:16px;color:#ffcc80">$129 <span style="font-size:11px;opacity:.7">(en destino)</span></span>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:20px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Hospedaje pagado</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#a5d6a7">$178</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Traslados pagados</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#a5d6a7">$608</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Auto Ibiza pendiente</span>
+              <span style="font-family:var(--font-d);font-size:18px;color:#ffcc80">$129 <span style="font-size:11px;opacity:.7">(en destino)</span></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)">
+              <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sand-l)">Falta pagar</span>
+              <div style="text-align:right">
+                <div style="font-family:var(--font-d);font-size:32px;font-weight:600;color:#ef9a9a;line-height:1">$1.016</div>
+                <div style="font-size:11px;color:#ffcc80;margin-top:4px">$879 en destino (hotel + auto Ibiza)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLA EQUALIZACION -->
+    <div class="reveal" style="margin-top:32px">
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sand-l);margin-bottom:20px">¿Cuánto debería pagar cada uno?</div>
+      <div style="overflow-x:auto">
+        <table class="btable">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th style="text-align:center">Total</th>
+              <th style="text-align:center">División</th>
+              <th style="text-align:right">Yami & Feli</th>
+              <th style="text-align:right">Adri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="city-cell" style="font-size:16px">Hospedaje</td>
+              <td style="text-align:center;color:var(--light)">$2.808</td>
+              <td style="text-align:center;font-size:12px;color:var(--mid)">÷ 2</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$1.404</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$1.404</td>
+            </tr>
+            <tr>
+              <td class="city-cell" style="font-size:16px">Traslados</td>
+              <td style="text-align:center;color:var(--light)">$940</td>
+              <td style="text-align:center;font-size:12px;color:var(--mid)">÷ 3 *</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$627</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$313</td>
+            </tr>
+            <tr>
+              <td class="city-cell" style="font-size:16px">Auto Mallorca</td>
+              <td style="text-align:center;color:var(--light)">$28</td>
+              <td style="text-align:center;font-size:12px;color:var(--mid)">÷ 2</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$14</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$14</td>
+            </tr>
+            <tr>
+              <td class="city-cell" style="font-size:16px">Auto Ibiza</td>
+              <td style="text-align:center;color:var(--light)">$129</td>
+              <td style="text-align:center;font-size:12px;color:var(--mid)">÷ 2</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$64,50</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:16px;color:var(--white)">$64,50</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.12)">
+              <td style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sand-l)">Debería pagar</td>
+              <td style="text-align:center;font-family:var(--font-d);font-size:18px;color:var(--sand-l)">$3.905</td>
+              <td></td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--sand-l)">$2.109,50</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--sand-l)">$1.795,50</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,.02)">
+              <td style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)">Ya pagó</td>
+              <td style="text-align:center;font-family:var(--font-d);font-size:16px;color:#a5d6a7">$1.752</td>
+              <td></td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:18px;color:#a5d6a7">$966</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:18px;color:#a5d6a7">$786</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,.04)">
+              <td style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sand-l);font-weight:600">Falta pagar</td>
+              <td style="text-align:center;font-family:var(--font-d);font-size:18px;color:#ef9a9a">$2.153</td>
+              <td></td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:28px;font-weight:600;color:#ef9a9a">$1.143,50</td>
+              <td style="text-align:right;font-family:var(--font-d);font-size:28px;font-weight:600;color:#ef9a9a">$1.009,50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--mid)">* Traslados: Yami & Feli = 2/3 del total · Adri = 1/3</div>
+    </div>
+
+    <!-- Nota en destino -->
+    <div class="reveal" style="margin-top:20px;background:rgba(255,204,0,.05);border:1px solid rgba(255,204,0,.15);border-radius:10px;padding:20px 28px;display:flex;gap:32px;flex-wrap:wrap;align-items:center">
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ffcc80;flex-shrink:0">Pendiente en destino</div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <div style="font-size:14px;color:var(--light)">🏨 Hotel Ibiza <span style="color:var(--mid)">→</span> $750 <span style="color:var(--mid)">(Adri paga en destino · Yami+Feli le transfieren su parte)</span></div>
+        <div style="font-size:14px;color:var(--light)">🚗 Auto Ibiza <span style="color:var(--mid)">→</span> $129 <span style="color:var(--mid)">(Adri paga en destino)</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">¡Buen Viaje!</div>
+  <div class="footer-line"></div>
+  <div class="footer-sub">Yami · Feli · Adri · Agosto 2026</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  const parent = el.closest('.sidebar, .budget-cards, .tgrid');
+  if(parent) {
+    const siblings = Array.from(parent.querySelectorAll('.reveal'));
+    el.style.transitionDelay = `${siblings.indexOf(el) * 0.08}s`;
+  }
+  obs.observe(el);
+});
+
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('[id]');
+const navItems = document.querySelectorAll('.nav-item');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 120) current = s.id });
+  navItems.forEach(a => {
+    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--sand-l)' : '';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
