@@ -264,9 +264,38 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
   /* General padding reduction */
   .budget-inner,.transport-inner,.route-inner{padding:0}
 }
+/* LOGIN */
+#login-overlay{position:fixed;inset:0;z-index:9999;background:#1C1610;display:flex;align-items:center;justify-content:center;padding:24px}
+#login-overlay.hidden{display:none}
+.login-box{width:100%;max-width:420px;text-align:center}
+.login-flag{font-size:48px;margin-bottom:24px}
+.login-title{font-family:var(--font-d);font-size:56px;font-weight:300;color:var(--white);line-height:.9;margin-bottom:8px}
+.login-title em{font-style:italic;color:var(--sand-l)}
+.login-sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:40px}
+.login-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--sand-l),transparent);margin:0 auto 40px}
+.login-input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px 20px;font-family:var(--font-b);font-size:16px;color:var(--white);text-align:center;letter-spacing:3px;outline:none;transition:border .2s}
+.login-input::placeholder{letter-spacing:1px;color:var(--mid)}
+.login-input:focus{border-color:var(--sand-l)}
+.login-btn{width:100%;margin-top:14px;background:var(--terra);border:none;border-radius:8px;padding:16px;font-family:var(--font-b);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--white);cursor:pointer;transition:background .2s}
+.login-btn:hover{background:var(--terra-l)}
+.login-error{margin-top:14px;font-size:13px;color:#ef9a9a;min-height:20px;opacity:0;transition:opacity .3s}
+.login-error.show{opacity:1}
 </style>
 </head>
 <body>
+
+<!-- LOGIN -->
+<div id="login-overlay">
+  <div class="login-box">
+    <div class="login-flag">🇪🇸</div>
+    <div class="login-title">Espa<em>ña</em></div>
+    <div class="login-sub">Verano · Agosto 2026</div>
+    <div class="login-divider"></div>
+    <input class="login-input" id="login-input" type="password" placeholder="Contraseña" autocomplete="current-password">
+    <button class="login-btn" id="login-btn">Entrar</button>
+    <div class="login-error" id="login-error">Contraseña incorrecta</div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1401,6 +1430,25 @@ body{background:var(--cream);color:var(--dark);font-family:var(--font-b);font-si
 </footer>
 
 <script>
+// LOGIN
+const HASH = 'daf4318b31563a5773d29cbadd92da8ccdf9f449e27e1f1c5911f5eb20e2fe95';
+async function sha256(str){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+const overlay = document.getElementById('login-overlay');
+const input = document.getElementById('login-input');
+const btn = document.getElementById('login-btn');
+const err = document.getElementById('login-error');
+if(localStorage.getItem('esp26')==='ok') overlay.classList.add('hidden');
+async function tryLogin(){
+  const h = await sha256(input.value.trim());
+  if(h===HASH){ localStorage.setItem('esp26','ok'); overlay.classList.add('hidden'); }
+  else{ err.classList.add('show'); input.value=''; input.focus(); setTimeout(()=>err.classList.remove('show'),2500); }
+}
+btn.addEventListener('click', tryLogin);
+input.addEventListener('keydown', e=>{ if(e.key==='Enter') tryLogin(); });
+
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
